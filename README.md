@@ -18,13 +18,15 @@ Note: This repo is under active development and things might break, use with cau
 * count instances of foreground present
 * save mask as png image
 * convert mask to coco annotation format
+* coco format to mask image
 * for softmax, combine multiple masks into single mask with intensity mapping
 * for softmax, explode single mask with intensity mapping into respective separate masks
 * display a coloured mask for viewing multi intensity masks
 * erosion and dilation of mask data
 * mask to rle
 * rle to mask
-* coco format to mask image
+* mask to pascal voc format
+* pascal voc format to mask image
 * feather a mask
 * draw square around mask
 * find maximum vertical and horizontal expanse of mask(in pixels)
