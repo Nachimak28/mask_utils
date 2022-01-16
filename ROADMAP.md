@@ -1,4 +1,6 @@
 ## Proposed functions to build
+
+Note: No feature has any priority/order
 * check if image read is binary
 * scale pixel intensity automatically to 0-255 range
 * pixel count of foreground vs background
@@ -13,8 +15,9 @@
 * save mask as png image
 * convert mask to coco annotation format
 * coco format to mask image
-* for softmax, combine multiple masks into single mask with intensity mapping
-* for softmax, explode single mask with intensity mapping into respective separate masks
+* for categorical masks, combine multiple masks into single mask with intensity mapping
+* for categorical masks, explode single mask with intensity mapping into respective separate masks
+* for categorical masks, identify overlap of multiple masks
 * display a coloured mask for viewing multi intensity masks
 * erosion and dilation of mask data
 * mask to rle
@@ -36,3 +39,5 @@
     * recall
     * accuracy
     * mAP
+* build patches from mask image
+* voxel functions (probably)
