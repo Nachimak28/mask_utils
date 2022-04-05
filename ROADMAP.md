@@ -8,6 +8,8 @@ Note: No feature has any priority/order
     * save mask as png image
     * mask to rle
     * rle to mask
+    * mask to b64
+    * b64 to mask
     * feather a mask
     * numpy to pillow
     * pillow to numpy
@@ -29,7 +31,7 @@ Note: No feature has any priority/order
     * make 3 channeled
     * stack multiple masks together on top of each other
     * stack multiple masks side by side
-    * erosion and dilation of mask data
+    * erosion, dilation, opening, closing of mask data
 * Categorical masks
     * for categorical masks, combine multiple masks into single mask with intensity mapping
     * for categorical masks, explode single mask with intensity mapping into respective separate masks
