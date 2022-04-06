@@ -135,10 +135,6 @@ def is_binary(mask):
     return True
 
 
-def scale_uint8():
-    pass
-
-
 def pixel_count(mask, pixel_intensity=255):
     return sum(mask == pixel_intensity)
 
