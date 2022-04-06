@@ -91,10 +91,17 @@ def base64_to_mask(bstring):
     mask = cv2.imdecode(n, cv2.IMREAD_UNCHANGED)[:, :, 3].astype(bool)
     mask = np.asarray(mask, dtype=np.uint8)*255
     return mask
-    
 
-def feather_mask():
-    pass
+
+def dilate_mask(mask, kernel_size=11, iterations=5):
+    kernel  = np.ones((kernel_size,kernel_size), np.uint8)
+    dilated = cv2.dilate(mask, kernel, iterations=iterations)
+    return dilated
+
+def feather_mask(mask, dilation_kernel_size=11, blur_kernel_size=99):
+    dilated_mask = dilate_mask(mask=mask, kernel_size=dilation_kernel_size)
+    feathered = cv2.GaussianBlur(dilated_mask,(blur_kernel_size,blur_kernel_size),0)
+    return feathered
 
 def detect_instances():
     pass
