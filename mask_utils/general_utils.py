@@ -174,8 +174,9 @@ def stack_on_top(mask_list, channel_first=True):
     return stacked_image
 
 
-def stack_sideways():
-    pass
+def stack_sideways(mask_list):
+    # ensure all masks in mask_list of same size and channels
+    return np.hstack(mask_list)
 
 
 def mask_to_pascal_voc():
