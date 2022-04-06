@@ -165,11 +165,16 @@ def make_3_channeled(mask):
 
 
 
-def stack_vertical():
-    pass
+def stack_on_top(mask_list, channel_first=True):
+    if channel_first:
+        axis = -1
+    else:
+        axis = 0
+    stacked_image = np.stack(mask_list, axis=axis)
+    return stacked_image
 
 
-def stack_horizontal():
+def stack_sideways():
     pass
 
 
