@@ -1,3 +1,4 @@
+from enum import unique
 import os
 import cv2
 import zlib
@@ -127,8 +128,11 @@ def mask_to_contours():
 def find_centroids():
     pass
 
-def is_binary():
-    pass
+def is_binary(mask):
+    unique_intensities = np.unique(mask)
+    if len(unique_intensities) > 2:
+        return False
+    return True
 
 
 def scale_uint8():
