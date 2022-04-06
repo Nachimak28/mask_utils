@@ -147,8 +147,9 @@ def percentage_fg(mask, pixel_intensity=255):
     return (sum(mask==255)*100/total_number_of_pixels)
 
 
-def invert():
-    pass
+def invert(mask):
+    max_intensity = np.max(mask)
+    return max_intensity - mask
 
 
 def get_instance_count():
