@@ -135,11 +135,16 @@ def scale_uint8():
     pass
 
 
-def pixel_count():
-    pass
+def pixel_count(mask, pixel_intensity=255):
+    return sum(mask == pixel_intensity)
 
-def percentage_fg():
-    pass
+def get_area(mask):
+    return np.count_nonzero(mask)
+
+
+def percentage_fg(mask, pixel_intensity=255):
+    total_number_of_pixels = mask.flatten().shape[0]
+    return (sum(mask==255)*100/total_number_of_pixels)
 
 
 def invert():
