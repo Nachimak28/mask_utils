@@ -147,8 +147,22 @@ def coco_to_mask():
     pass
 
 
-def make_3_channeled():
-    pass
+def make_3_channeled(mask):
+    channels = get_channels(mask)
+    three_channeled_mask = np.zeros((mask.shape[0], mask.shape[1], 3), dtype=np.uint8)
+    if channels == 3:
+        return mask
+    elif channels < 3:
+        if channels == 1:
+            three_channeled_mask[:, :, 0] = mask
+            three_channeled_mask[:, :, 1] = mask
+            three_channeled_mask[:, :, 2] = mask
+            return three_channeled_mask
+        else:
+            raise Exception('Invalid Mask')
+    elif channels > 3:
+        return mask[:, :, :3]
+
 
 
 def stack_vertical():
