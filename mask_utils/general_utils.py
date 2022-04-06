@@ -103,6 +103,16 @@ def feather_mask(mask, dilation_kernel_size=11, blur_kernel_size=99):
     feathered = cv2.GaussianBlur(dilated_mask,(blur_kernel_size,blur_kernel_size),0)
     return feathered
 
+def bbox_full_mask(mask):
+    x = (mask.sum(axis=0)!=0).argmax(axis=0)
+    y = (mask.sum(axis=1)!=0).argmax(axis=0)
+        
+    height = (mask.sum(axis=1)!=0).sum()
+    width = (mask.sum(axis=0)!=0).sum()
+
+    return [x, y, width, height]
+
+
 def detect_instances():
     pass
 
