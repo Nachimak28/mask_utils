@@ -201,12 +201,13 @@ def precision_score():
 def recall_score():
     pass
 
-def accuracy():
-    pass
+def accuracy(mask_true, mask_pred):
+    # TODO: Validate this with sklearn
+    flat_mask_true = mask_true.flatten()
+    flat_mask_pred = mask_pred.flatten()
 
+    return np.sum(flat_mask_true == flat_mask_pred)/flat_mask_pred.shape[0]
 
-def balanced_accuracy():
-    pass
 
 def mAP_score():
     pass
